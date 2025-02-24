@@ -8,6 +8,7 @@ yarn-error.log
 dist/
 build/
 out/
+data/
 
 # Environment variables
 .env
@@ -41,7 +42,7 @@ __pycache__/
 env/
 venv/
 ENV/
-tolowner-proAI/
+tolowner/
 .env
 .venv
 pip-log.txt

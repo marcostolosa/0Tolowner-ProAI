@@ -1,8 +1,9 @@
 # Usar uma imagem base do Python
 FROM python:3.9
 
-# Definir o diretório de trabalho
+# Definir o diretório de trabalho e permissões
 WORKDIR /app
+RUN mkdir -p /app/data && chmod -R 777 /app/data
 
 # Copiar os arquivos de requisitos
 COPY requirements.txt .
