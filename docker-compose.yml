@@ -1,5 +1,5 @@
 services:
-  app:
+  api:
     build:
       context: ./app
       dockerfile: Dockerfile
@@ -19,3 +19,12 @@ services:
     stdin_open: true
     volumes:
       - ./kali:/kali
+
+  ui:
+    build:
+      context: ./ui
+      dockerfile: Dockerfile
+    ports:
+      - "8501:8501"
+    depends_on:
+      - api
