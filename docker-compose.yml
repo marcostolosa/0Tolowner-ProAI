@@ -1,0 +1,21 @@
+services:
+  app:
+    build:
+      context: ./app
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8000"
+    environment:
+      - HTB_TOKEN=${HTB_TOKEN}
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
+      - DATABASE_URL=${DATABASE_URL}
+    volumes:
+      - ./app:/app
+
+  kali:
+    image: kalilinux/kali-rolling
+    container_name: kali_container
+    tty: true
+    stdin_open: true
+    volumes:
+      - ./kali:/kali
