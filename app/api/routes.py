@@ -14,7 +14,7 @@ async def execute(command: str):
 
 @router.post("/kali/execute/")
 async def execute_kali(command: str):
-    result = await run_command_in_kali(command)
+    result = await run_command_in_kali(command) 
     log_command(command, result, 0, "kali")
     return {"result": result}
 
