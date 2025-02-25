@@ -13,15 +13,14 @@ services:
       - ./app:/app
 
   kali:
-    image: kalilinux/kali-rolling
+    build:
+      context: ./kali  
+      dockerfile: Dockerfile
     container_name: kali
     tty: true
     stdin_open: true
     ports:
       - "5000:5000"  
-    volumes:
-      - ./kali:/kali
-    command: python3 /kali/server.py  
 
   ui:
     build:
